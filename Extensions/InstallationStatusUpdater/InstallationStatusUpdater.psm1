@@ -30,7 +30,7 @@ function GetMainMenuItems
 function Invoke-InstallationStatusCheck
 {
     # Set GameDatabase
-    $GameDatabase = $PlayniteApi.Database.Games | Where-Object {$_.PluginId -eq "00000000-0000-0000-0000-000000000000"} | Where-Object { ($_.GameImagePath) -or ($_.PlayAction.Type -eq "File") }
+    $GameDatabase = $PlayniteApi.Database.Games | Where-Object { ($_.GameImagePath) -or ($_.PlayAction.Type -eq "File") }
     
     # Set Counters
     $global:MarkedInstalled = 0
